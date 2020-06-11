@@ -1,0 +1,8 @@
+#endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: https://dempsey-store-prod-23e5b547cc.herokuapp.com/dempsey-store-prod/prod
+endpoint: https://dempsey-store-prod-23e5b547cc.herokuapp.com/dempsey-store-prod/prod
+datamodel: datamodel.prisma
+secret: ${env:PRISMA_SECRET}
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
